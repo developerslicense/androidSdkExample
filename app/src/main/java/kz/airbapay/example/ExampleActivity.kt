@@ -41,12 +41,12 @@ var shopId = "" // todo заменить на логин в системе Airba
 var password = "" // todo заменить на пароль в системе AirbaPay
 var terminalId = "" // todo заменить на terminalId в системе AirbaPay
 
-var isRenderSecurityCvv: Boolean? = null
-var isRenderSecurityBiometry: Boolean? = null
-var isRenderSavedCards: Boolean? = null
-var isRenderGooglePay: Boolean? = null
+var isRenderSecurityCvv: Boolean? = true
+var isRenderSecurityBiometry: Boolean? = true
+var isRenderSavedCards: Boolean? = true
+var isRenderGooglePay: Boolean? = true
 
-var isGooglePayNative: Boolean = false
+var isGooglePayNative: Boolean = false // todo для нативного надо выполнить настройки в консоли разработчика, как описано в документации
 var needDisableScreenShot: Boolean = false
 
 var gateway: String? = null
@@ -142,6 +142,7 @@ class ExampleActivity : ComponentActivity() {
                             .fillMaxWidth()
                             .padding(horizontal = 50.dp),
                         onClick = {
+                            isGooglePayNative = nativeGooglePay.value
                             isRenderSecurityCvv = renderSecurityCvv.value
                             isRenderSecurityBiometry = renderSecurityBiometry.value
                             isRenderSavedCards = renderSavedCards.value
@@ -197,6 +198,7 @@ class ExampleActivity : ComponentActivity() {
                             .fillMaxWidth()
                             .padding(horizontal = 50.dp),
                         onClick = {
+                            isGooglePayNative = nativeGooglePay.value
                             isRenderSecurityCvv = renderSecurityCvv.value
                             isRenderSecurityBiometry = renderSecurityBiometry.value
 
@@ -217,6 +219,7 @@ class ExampleActivity : ComponentActivity() {
                             .fillMaxWidth()
                             .padding(horizontal = 50.dp),
                         onClick = {
+                            isGooglePayNative = nativeGooglePay.value
                             isRenderSecurityCvv = renderSecurityCvv.value
                             isRenderSecurityBiometry = renderSecurityBiometry.value
 
@@ -293,6 +296,7 @@ class ExampleActivity : ComponentActivity() {
                             .fillMaxWidth()
                             .padding(horizontal = 50.dp),
                         onClick = {
+                            isGooglePayNative = nativeGooglePay.value
                             isRenderSecurityCvv = renderSecurityCvv.value
                             isRenderSecurityBiometry = renderSecurityBiometry.value
                             isRenderSavedCards = renderSavedCards.value
@@ -327,6 +331,7 @@ class ExampleActivity : ComponentActivity() {
                             .fillMaxWidth()
                             .padding(horizontal = 50.dp),
                         onClick = {
+                            isGooglePayNative = nativeGooglePay.value
                             isRenderSecurityCvv = renderSecurityCvv.value
                             isRenderSecurityBiometry = renderSecurityBiometry.value
                             isRenderSavedCards = renderSavedCards.value
@@ -412,6 +417,7 @@ class ExampleActivity : ComponentActivity() {
                                     Toast.LENGTH_LONG
                                 ).show()
                             } else {
+                                isGooglePayNative = nativeGooglePay.value
                                 isRenderSecurityCvv = renderSecurityCvv.value
                                 isRenderSecurityBiometry = renderSecurityBiometry.value
 
