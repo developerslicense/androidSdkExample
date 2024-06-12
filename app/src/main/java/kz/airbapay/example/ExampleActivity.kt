@@ -57,6 +57,10 @@ class ExampleActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        if (shopId.isEmpty() || password.isEmpty() || terminalId.isEmpty()) {
+            throw Exception("AirbaPaySdk Нужно заполнить shopId, password, terminalId")
+        }
+
         setContent {
             val scrollState = rememberScrollState()
 
