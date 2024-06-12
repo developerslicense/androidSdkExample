@@ -57,10 +57,6 @@ class ExampleActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        if (shopId.isEmpty() || password.isEmpty() || terminalId.isEmpty()) {
-            throw Exception("AirbaPaySdk Нужно заполнить shopId, password, terminalId")
-        }
-
         setContent {
             val scrollState = rememberScrollState()
 
@@ -82,6 +78,12 @@ class ExampleActivity : ComponentActivity() {
             val tokenText = remember { mutableStateOf(TextFieldValue("")) }
 
             val context = LocalContext.current
+
+            if (shopId.isEmpty() || password.isEmpty() || terminalId.isEmpty()) {
+                    Text("Нужно заполнить shopId, password, terminalId",
+                        color = Color.Red)
+
+            } else
 
             ConstraintLayout {
 
